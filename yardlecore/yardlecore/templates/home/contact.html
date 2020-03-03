@@ -1,10 +1,42 @@
-<!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>My test page</title>
-  </head>
-  <body>
-    <p>This is my contact page</p>
-  </body>
+<head>
+<title>Contact Us</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+	<div class="navbar">
+		<ul>
+		  <li class="nav-left"><a href="">Home</a></li>
+		  <li class="nav-right"><a href="">Profile</a></li>
+		  <li class="nav-right"><a href="">Search Listings</a></li>
+		  <li class="nav-right"><a href="">Create Listing</a></li>
+		</ul>
+	</div>
+
+	<div class="contact-title">
+		<h1>Contact Us</h1>
+	</div>
+	
+	
+	
+	<div class="contact-form">
+		<form id="contact-form" method="post" action="">
+			<input name="name" type="text" class="form-control" placeholder="Your Name" required>
+			
+			<br>
+			
+			<input name="email" type="email" class="form-control" placeholder="Your Email" required>
+			
+			<br>
+			
+			<textarea name="message" value="" class="form-control" placeholder="Message" rows="6" required></textarea>
+			
+			<br>
+			
+			<input type="submit" class="form-control submit" value="SEND MESSAGE">
+			
+		</form>
+	</div>
+</body>
 </html>
