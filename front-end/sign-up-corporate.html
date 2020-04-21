@@ -1,0 +1,62 @@
+<head>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <link rel="icon" href="yardle-logo.png">
+</head>
+
+
+<body>
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+
+            <nav class="navbar navbar-expand">
+              <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+                <ul class="navbar-nav nav-fill w-100">
+                    <li class="nav-item">
+                        <a href='home.html' class='nav-link'><h2>Yardle</h2><img class='menuLogo' src='yardle-logo.png' alt='Yardle'></a>
+                    </li>
+                    <li class="nav-item">
+                        <a href='how.html' class='nav-link'><h2>How It Works</h2></a>
+                    </li>
+                    <li class="nav-item">
+                        <a href='sign-in.html' class='nav-link'><h2>Sign In</h2></a>
+                    </li>
+                </ul>
+              </div>
+            </nav>
+
+        </div>
+    </div>
+    
+    <div class='row'>
+        <div class="col-md-5"></div>
+        <div class="col-md-2">
+
+            <!-- https://getbootstrap.com/docs/4.0/examples/sign-in/ --->
+            <div class="text-center">
+                <form class="form-signin">
+                  <img class="mb-4" src="yardle-logo.png" alt="" width="72" height="72">
+                  <h1 class="h3 mb-3 font-weight-normal">Sign Up</h1>
+                  <label for="inputType" class="sr-only">Type</label>
+                  <select id="inputType" class="form-control" placeholder="Type" required>
+                    <option value="construction">Construction</option>
+                    <option value="financing">Financing</option>
+                    <option value="property">Property Management</option>
+                  </select>
+                  <label for="inputCorporationName" class="sr-only">Corporation Name</label>
+                  <input id="inputCorporationName" class="form-control" placeholder="Corporation Name" required autofocus>
+                  <label for="inputYears" class="sr-only">Years Incorporated</label>
+                  <input id="inputYears" class="form-control" placeholder="Years Incorporated" required>
+                  <label for="inputLogo" class="sr-only">Company Logo</label>
+                  <input type="file" id="inputLogo" class="form-control" placeholder="Logo" accept="image/png, image/jpeg" required>
+                  <label for="inputCost" class="sr-only">Cost of Service</label>
+                  <input id="inputCost" class="form-control" placeholder="Cost of Service" required>
+                  <button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
+                  <p class="mt-5 mb-3 text-muted">&copy; 2020</p>
+                </form>
+              </div>
+
+        </div>
+    </div>
+</body>
