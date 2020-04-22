@@ -1,0 +1,22 @@
+{% extends 'home/header.html' %}
+{% load static %}
+
+{% block title %}
+    How
+{% endblock %}
+
+{% block head %}
+     <link rel="stylesheet" type="text/css" href="{% static 'home/style.css' %}">
+{% endblock %}
+
+{% block content %}
+      <div class='row'>
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+        <div class='container'>
+            <img src='{% static "images/backyard.jpg" %}' alt='Backyard' class='img-fluid'>
+            <h2 class='centered'>Make the world a better place!</h2>
+        </div>
+        </div>
+    </div>
+{% endblock %}

@@ -25,3 +25,8 @@ def signup(request):
     else:
         form = UserCreationForm()
     return render(request, 'home/signup.html', {'form': form})
+
+def how(request):
+    template = loader.get_template("home/how.html")
+    context = {}
+    return HttpResponse(template.render(context, request))
