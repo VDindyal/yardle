@@ -1,0 +1,9 @@
+.menuLogo {
+    vertical-align: top;
+    object-fit: cover;
+}
+
+h2 {
+    color: black;
+    display: inline-block;
+}
