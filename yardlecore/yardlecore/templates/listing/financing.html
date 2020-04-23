@@ -1,0 +1,56 @@
+{% extends 'home/header.html' %}
+{% load static %}
+
+{% block title %}
+    Financing
+{% endblock %}
+
+{% block head %}
+     <link rel="stylesheet" type="text/css" href="{% static 'home/style.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class='row'>
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+        <h1>Step 2/4 - Financing</h1>
+        <form>
+          <div class="form-group">
+            <label for="exampleFormControlInput1">Income</label>
+            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Annual Income">
+          </div>
+          <div class="form-group">
+              <label for="exampleFormControlInput1">Basic Financials</label>
+              <div class="row">
+                <div class="col">
+                  <input type="text" class="form-control" placeholder="Assets">
+                </div>
+                <div class="col">
+                  <input type="text" class="form-control" placeholder="Liabilities">
+                </div>
+              </div>
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlInput1">Down Payment</label>
+            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Down Payment">
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlSelect2">Select Financing</label>
+            <select multiple class="form-control" id="exampleFormControlSelect2">
+              <option>{Financier 1 - Interest Rate 1}</option>
+              <option>{Financier 2 - Interest Rate 2}</option>
+              <option>{Financier 3 - Interest Rate 3}</option>
+              <option>{Financier 4 - Interest Rate 4}</option>
+              <option>{Financier 5 - Interest Rate 5}</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="financingSecured">Financing SECURED</label>
+            <input class="form-control" type="text" placeholder="No" readonly>
+          </div>
+          <a href='get-started.html' class="btn btn-secondary mb-2">Previous</a>
+          <a href='construction.html' class="btn btn-primary mb-2">Next</a>
+        </form>
+        </div>
+    </div>
+{% endblock %}

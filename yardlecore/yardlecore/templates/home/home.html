@@ -1,52 +1,27 @@
-<html>
-<head>
-    <title>Contact Us</title>
-    {% load static %}
-    {% include 'home/dependencies.html' %}
+{% extends 'home/header.html' %}
+{% load static %}
 
-    <link rel="stylesheet" type="text/css" href="{% static 'home/home.css' %}">
-</head>
+{% block title %}
+    Home
+{% endblock %}
 
+{% block head %}
+     <link rel="stylesheet" type="text/css" href="{% static 'home/style.css' %}">
+{% endblock %}
+
+{% block content %}
 <body>
-	<div class="navbar">
-		<ul>
-		  <li class="nav-left"><a href="">Home</a></li>
-		  <li class="nav-right"><a href="">Profile</a></li>
-		  <li class="nav-right"><a href="">Search Listings</a></li>
-		  <li class="nav-right"><a href="">Create Listing</a></li>
-		</ul>
-	</div>
-
-	<div class="home-title">
-		<h1>Live Tiny in a Beautiful Yard in the City</h1>
-	</div>
-	
-	
-	
-	<div class="search-div">
-        <div class='recommended-listings'>
-            <div class='a-recommended-listing'>
-                <div class='recommended-img'>
-                    <img src="{% static "images/tiny-house-1.jpg" %}">
-                </div>
-                <div class='recommended-description'>
-                    <h2>Waterloo, Ontario</h2>
-                    <h3>$200</h3>
-                </div>
-            </div>
-            <div class='a-recommended-listing'>
-                <div class='recommended-img'>
-                    <img src="{% static "images/tiny-house-1.jpg" %}">
-                </div>
-                <div class='recommended-description'>
-                    <h2>Waterloo, Ontario</h2>
-                    <h3>$200</h3>
-                </div>
-            </div>
+	<div class='row'>
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+        <div class='container'>
+            <img src='{% static "images/backyard-2.jpg" %}' alt='Backyard' class='img-fluid'>
+            <h2 class='centered'>Rent your backyard. Earn Money. Create Affordable Housing.</h2>
+            <form action="listing/getstarted">
+                <input class='btn' type="submit" value="Get Started" />
+            </form>
         </div>
-        <div class='search-bar'>
-            <input type="text" name="search" placeholder="Where do you want to live?">
         </div>
-	</div>
+    </div>
 </body>
-</html>
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends 'home/header.html' %}
+{% load static %}
+
+{% block title %}
+    Property
+{% endblock %}
+
+{% block head %}
+     <link rel="stylesheet" type="text/css" href="{% static 'home/style.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class='row'>
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+        <h1>Step 4/4 - Property Manager</h1>
+        <form>
+          <div class="form-group">
+            <label for="propertyManager">Select Property Manager</label>
+            <select multiple class="form-control" id="propertyManager">
+              <option>{Property Manager 1 - Monthly Cost 1}</option>
+              <option>{Property Manager 2 - Monthly Cost 2}</option>
+              <option>{Property Manager 3 - Monthly Cost 3}</option>
+              <option>{Property Manager 4 - Monthly Cost 4}</option>
+              <option>{Property Manager 5 - Monthly Cost 5}</option>
+            </select>
+          </div>
+          <a href='construction.html' class="btn btn-secondary mb-2">Previous</a>
+          <input type='submit' class="btn btn-primary mb-2">
+        </form>
+
+        </div>
+    </div>
+{% endblock %}

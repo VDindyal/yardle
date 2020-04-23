@@ -1,0 +1,56 @@
+{% extends 'home/header.html' %}
+{% load static %}
+
+{% block title %}
+    Get Started
+{% endblock %}
+
+{% block head %}
+     <link rel="stylesheet" type="text/css" href="{% static 'home/style.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class='row'>
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+        <h1>Step 1/4 - Get Started</h1>
+        <form>
+          <div class="form-group">
+            <label for="address">Address</label>
+            <input type="email" class="form-control" id="address" placeholder="75 University Ave W, Waterloo, ON N2L 3C5">
+          </div>
+          <div class="form-group">
+              <label for="backyardDimensions">Backyard Dimensions</label>
+              <div class="row">
+                <div class="col">
+                  <input type="text" class="form-control" id='backyardHeight' placeholder="Height">
+                </div>
+                <div class="col">
+                  <input type="text" class="form-control" id='backyardWidth' placeholder="Width">
+                </div>
+              </div>
+          </div>
+          <div class="form-group">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="confirmationCheck">
+              <label class="form-check-label" for="confirmationCheck">
+                I am interested in building an Accessible Dwelling Unit in my Backyard.
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="homeVisitDate">Home Visit Appointment (15 minutes)</label>
+            <input type="datetime-local" class="form-control" id="homeVisitDate" placeholder="">
+          </div>
+
+          <div class="form-group">
+            <label for="homeVisitCompleted">Home Visit COMPLETED</label>
+            <input class="form-control" type="text" placeholder="No" readonly>
+          </div>
+          <a href='financing.html' class="btn btn-primary mb-2">Next</a>
+        </form>
+
+        </div>
+    </div>
+{% endblock %}
