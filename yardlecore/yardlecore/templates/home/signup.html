@@ -5,10 +5,40 @@
 {% endblock %}
 
 {% block content %}
-  <h2>Sign up</h2>
-  <form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Sign up</button>
-  </form>
+    <div class="container">
+        <div class="col-md-8 offset-md-2">
+          <h2 class="mb-3">Sign up</h2>
+          <form method="post">
+              {% csrf_token %}
+                    {% for error in form.non_field_errors %}
+                        <div class="invalid-feedback" style="display: block">{{ error }}</div>
+                    {% endfor %}
+                <div class="form-group">
+                    <label for="{{ form.username.id_for_label }}">{{ form.username.label_tag }}</label>
+                    <input type="text" class="form-control {{ form.username.errors|yesno:"is-invalid," }}" id="{{ form.username.id_for_label }}" placeholder="Enter username" maxlength="150" autocapitalize="none" autocomplete="username" name="username" autofocus required>
+                    <small class="form-text text-muted">{{ form.username.help_text }}</small>
+                    {% for error in form.username.errors %}
+                        <div class="invalid-feedback" style="display: block">{{ error }}</div>
+                    {% endfor %}
+                </div>
+                <div class="form-group">
+                    <label for="{{ form.password1.id_for_label }}">{{ form.password1.label_tag }}</label>
+                    <input type="password" class="form-control {{ form.password1.errors|yesno:"is-invalid," }}" id="{{ form.password1.id_for_label }}" placeholder="Password" autocomplete="new-password" name="password1" required>
+                    <small class="form-text text-muted">{{ form.password1.help_text }}</small>
+                    {% for error in form.password1.errors %}
+                        <div class="invalid-feedback" style="display: block">{{ error }}</div>
+                    {% endfor %}
+                </div>
+                <div class="form-group">
+                    <label for="{{ form.password2.id_for_label }}">{{ form.password2.label_tag }}</label>
+                    <input type="password" class="form-control {{ form.password2.errors|yesno:"is-invalid," }}" id="{{ form.password2.id_for_label }}" placeholder="Confirm password" autocomplete="new-password" name="password2" required>
+                    <small class="form-text text-muted">{{ form.password2.help_text }}</small>
+                    {% for error in form.password2.errors %}
+                        <div class="invalid-feedback" style="display: block">{{ error }}</div>
+                    {% endfor %}
+                </div>
+              <button type="submit" class="btn btn-primary">Sign up</button>
+          </form>
+        </div>
+    </div>
 {% endblock %}

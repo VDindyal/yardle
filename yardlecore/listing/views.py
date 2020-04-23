@@ -8,11 +8,6 @@ def index(request):
     context = {}
     return HttpResponse(template.render(context, request))
 
-def create(request):
-    template = loader.get_template("listing/create.html")
-    context = {}
-    return HttpResponse(template.render(context, request))
-
 def construction(request):
     template = loader.get_template("listing/construction.html")
     context = {}

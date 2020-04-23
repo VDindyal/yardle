@@ -48,8 +48,8 @@
             <label for="financingSecured">Financing SECURED</label>
             <input class="form-control" type="text" placeholder="No" readonly>
           </div>
-          <a href='get-started.html' class="btn btn-secondary mb-2">Previous</a>
-          <a href='construction.html' class="btn btn-primary mb-2">Next</a>
+          <a href='{% url 'listing:getstarted' %}' class="btn btn-secondary mb-2">Previous</a>
+          <a href='{% url 'listing:construction' %}' class="btn btn-primary mb-2">Next</a>
         </form>
         </div>
     </div>

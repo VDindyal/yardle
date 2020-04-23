@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import loader
-from django.contrib.auth import login, authenticate
+from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.forms import UserCreationForm
 from django.shortcuts import render, redirect
 from django.urls import reverse
@@ -21,7 +21,7 @@ def signup(request):
             raw_password = form.cleaned_data.get('password1')
             user = authenticate(username=username, password=raw_password)
             login(request, user)
-            return redirect('/')
+            return redirect('home:home')  # user profile page maybe?
     else:
         form = UserCreationForm()
     return render(request, 'home/signup.html', {'form': form})
@@ -30,3 +30,7 @@ def how(request):
     template = loader.get_template("home/how.html")
     context = {}
     return HttpResponse(template.render(context, request))
+
+def user_logout(request):
+    logout(request)
+    return redirect('home:home')
