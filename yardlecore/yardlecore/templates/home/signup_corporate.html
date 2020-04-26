@@ -1,0 +1,85 @@
+{% extends 'home/header.html' %}
+
+{% block title %}
+    Corporate Sign up
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="col-md-8 offset-md-2 mb-5">
+          <h2 class="mb-3">Corporate Sign up</h2>
+          <form method="post">
+              {% csrf_token %}
+                    {% for error in form.non_field_errors %}
+                        <div class="invalid-feedback" style="display: block">{{ error }}</div>
+                    {% endfor %}
+                <div class="form-group">
+                    <label for="{{ form.username.id_for_label }}">{{ form.username.label_tag }}</label>
+                    <input type="text" class="form-control {{ form.username.errors|yesno:"is-invalid," }}" id="{{ form.username.id_for_label }}" placeholder="Enter username" maxlength="150" autocapitalize="none" autocomplete="username" name="username" autofocus required>
+                    <small class="form-text text-muted">{{ form.username.help_text }}</small>
+                    {% for error in form.username.errors %}
+                        <div class="invalid-feedback" style="display: block">{{ error }}</div>
+                    {% endfor %}
+                </div>
+                <div class="form-group">
+                    <label for="{{ form.password1.id_for_label }}">{{ form.password1.label_tag }}</label>
+                    <input type="password" class="form-control {{ form.password1.errors|yesno:"is-invalid," }}" id="{{ form.password1.id_for_label }}" placeholder="Password" autocomplete="new-password" name="password1" required>
+                    <small class="form-text text-muted">{{ form.password1.help_text }}</small>
+                    {% for error in form.password1.errors %}
+                        <div class="invalid-feedback" style="display: block">{{ error }}</div>
+                    {% endfor %}
+                </div>
+                <div class="form-group">
+                    <label for="{{ form.password2.id_for_label }}">{{ form.password2.label_tag }}</label>
+                    <input type="password" class="form-control {{ form.password2.errors|yesno:"is-invalid," }}" id="{{ form.password2.id_for_label }}" placeholder="Confirm password" autocomplete="new-password" name="password2" required>
+                    <small class="form-text text-muted">{{ form.password2.help_text }}</small>
+                    {% for error in form.password2.errors %}
+                        <div class="invalid-feedback" style="display: block">{{ error }}</div>
+                    {% endfor %}
+                </div>
+                <div class="form-group">
+                    <label for="{{ form.corp_name.id_for_label }}">{{ form.corp_name.label_tag }}</label>
+                    <input type="text" class="form-control {{ form.corp_name.errors|yesno:"is-invalid," }}" id="{{ form.corp_name.id_for_label }}" placeholder="Enter corporation name" maxlength="128" autocapitalize="none" name="corp_name" required>
+                    <small class="form-text text-muted">{{ form.corp_name.help_text }}</small>
+                    {% for error in form.corp_name.errors %}
+                        <div class="invalid-feedback" style="display: block">{{ error }}</div>
+                    {% endfor %}
+                </div>
+                <div class="form-group">
+                    <label for="{{ form.years_incorporated.id_for_label }}">{{ form.years_incorporated.label_tag }}</label>
+                    <input type="number" class="form-control {{ form.years_incorporated.errors|yesno:"is-invalid," }}" id="{{ form.years_incorporated.id_for_label }}" name="years_incorporated" min="0" required>
+                    <small class="form-text text-muted">{{ form.years_incorporated.help_text }}</small>
+                    {% for error in form.years_incorporated.errors %}
+                        <div class="invalid-feedback" style="display: block">{{ error }}</div>
+                    {% endfor %}
+                </div>
+                <div class="form-group">
+                    <label for="{{ form.corp_type.id_for_label }}">{{ form.corp_type.label_tag }}</label>
+                    {{ form.corp_type }}
+                    <small class="form-text text-muted">{{ form.corp_type.help_text }}</small>
+                    {% for error in form.corp_type.errors %}
+                        <div class="invalid-feedback" style="display: block">{{ error }}</div>
+                    {% endfor %}
+                </div>
+                <div class="form-group">
+                    <label for="{{ form.service_cost.id_for_label }}">{{ form.service_cost.label_tag }}</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">$</div>
+                        </div>
+                        <input type="number" class="form-control {{ form.service_cost.errors|yesno:"is-invalid," }}" id="{{ form.service_cost.id_for_label }}" name="service_cost" min="0" step="0.01" required>
+                    </div>
+                    <small class="form-text text-muted">{{ form.service_cost.help_text }}</small>
+                    {% for error in form.service_cost.errors %}
+                        <div class="invalid-feedback" style="display: block">{{ error }}</div>
+                    {% endfor %}
+                </div>
+              <button type="submit" class="btn btn-primary">Sign up</button>
+          </form>
+            <br>
+            <a href="{% url 'home:signin' %}">Already have an account? Sign in</a>
+            <br>
+            <a href="{% url 'home:signup' %}">Standard Sign up</a>
+        </div>
+    </div>
+{% endblock %}

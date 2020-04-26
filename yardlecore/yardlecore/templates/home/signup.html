@@ -39,6 +39,10 @@
                 </div>
               <button type="submit" class="btn btn-primary">Sign up</button>
           </form>
+            <br>
+            <a href="{% url 'home:signin' %}">Already have an account? Sign in</a>
+            <br>
+            <a href="{% url 'home:signup_corporate' %}">Corporate Sign up</a>
         </div>
     </div>
 {% endblock %}
