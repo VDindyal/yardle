@@ -6,30 +6,35 @@
     {% include 'home/dependencies.html' %}
 
     <link rel="stylesheet" type="text/css" href="{% static 'home/header.css' %}">
+    <link rel="icon" href="{% static "images/yardle-logo.png" %}">
     {% block head %}{% endblock %}
 </head>
 <body>
-    <div class="row">
-        <div class="col-md-1"></div>
-        <div class="col-md-10">
-
-            <nav class="navbar navbar-expand">
-              <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-                <ul class="navbar-nav nav-fill w-100">
-                    <li class="nav-item">
-                        <a href='home.html' class='nav-link'><h2>Yardle</h2><img class='menuLogo' src='{% static "images/yardle-logo.png" %}' alt='Yardle'></a>
-                    </li>
-                    <li class="nav-item">
-                        <a href='{% url 'home:how' %}' class='nav-link'><h2>How It Works</h2></a>
-                    </li>
-                    <li class="nav-item">
-                        <a href='#' class='nav-link'><h2>Sign In</h2></a>
-                    </li>
-                </ul>
-              </div>
-            </nav>
-        </div>
-    </div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="{% url 'home:home' %}">Yardle <img class="d-inline-block align-top" src='{% static "images/yardle-logo.png" %}' alt=''></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'home:how' %}">How It Works</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'listing:getstarted' %}">Create Listing</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav">
+        {% if user.is_authenticated %}
+            <li class="nav-item"><a class="nav-link" href="#">{{ user.username }}</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url "home:user_logout" %}">Logout</a></li>
+        {% else %}
+            <li class="nav-item"><a class="nav-link" href="{% url 'home:signin' %}">Sign in</a></li>
+        {% endif %}
+        </ul>
+      </div>
+    </nav>
+    <br>
     {% block content %}{% endblock %}
 </body>
 </html>
