@@ -1,12 +1,15 @@
+{% extends 'home/header.html' %}
+{% load static %}
 
-<head>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
-    <link href="style.css" rel="stylesheet">
-    <link rel="icon" href="yardle-logo.png">
-</head>
+{% block title %}
+    Construction
+{% endblock %}
 
+{% block head %}
+     <link rel="stylesheet" type="text/css" href="{% static 'home/style.css' %}">
+{% endblock %}
 
-<body>
+{% block content %}
     <div class="row">
         <div class="col-md-1"></div>
         <div class="col-md-10">
@@ -76,10 +79,10 @@
             <label for="permit">Building COMPLETED</label>
             <input class="form-control" type="text" placeholder="No" readonly>
           </div>
-          <a href='financing.html' class="btn btn-secondary mb-2">Previous</a>
-          <a href='property.html' class="btn btn-primary mb-2">Next</a>
+          <a href='{% url 'listing:financing' %}' class="btn btn-secondary mb-2">Previous</a>
+          <a href='{% url 'listing:property' %}' class="btn btn-primary mb-2">Next</a>
         </form>
         
         </div>
     </div>
-</body>
+{% endblock %}
