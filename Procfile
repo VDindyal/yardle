@@ -1,1 +1,1 @@
-web: gunicorn yardlecore.wsgi
+web: gunicorn yardlecore.yardlecore.wsgi
