@@ -37,11 +37,9 @@
           <div class="form-group">
             <label for="exampleFormControlSelect2">Select Financing</label>
             <select multiple class="form-control" id="exampleFormControlSelect2">
-              <option>{Financier 1 - Interest Rate 1}</option>
-              <option>{Financier 2 - Interest Rate 2}</option>
-              <option>{Financier 3 - Interest Rate 3}</option>
-              <option>{Financier 4 - Interest Rate 4}</option>
-              <option>{Financier 5 - Interest Rate 5}</option>
+                {% for profile in profiles %}
+                    <option>{{profile.corp_name}} - {{profile.service_cost}}%</option>
+                {% endfor %}
             </select>
           </div>
           <div class="form-group">

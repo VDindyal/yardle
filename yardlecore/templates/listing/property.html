@@ -14,15 +14,14 @@
         <div class="col-md-1"></div>
         <div class="col-md-10">
         <h1>Step 4/4 - Property Manager</h1>
-        <form>
+        <form method="POST">
+            {% csrf_token %}
           <div class="form-group">
             <label for="propertyManager">Select Property Manager</label>
             <select multiple class="form-control" id="propertyManager">
-              <option>{Property Manager 1 - Monthly Cost 1}</option>
-              <option>{Property Manager 2 - Monthly Cost 2}</option>
-              <option>{Property Manager 3 - Monthly Cost 3}</option>
-              <option>{Property Manager 4 - Monthly Cost 4}</option>
-              <option>{Property Manager 5 - Monthly Cost 5}</option>
+              {% for profile in profiles %}
+                    <option>{{profile.corp_name}} - ${{profile.service_cost}}/month</option>
+                {% endfor %}
             </select>
           </div>
           <a href='{% url 'listing:construction' %}' class="btn btn-secondary mb-2">Previous</a>
