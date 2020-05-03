@@ -1,1 +1,1 @@
-Link to website: [Yardle](yardle.herokuapp.com)
+Link to website: https://yardle.herokuapp.com/
